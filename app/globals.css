@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 28, 25, 23;
+  --background-start-rgb: 255, 251, 245;
+  --text-primary: 28, 25, 23;
+  --text-secondary: 112, 78, 55;
+  --accent: 120, 53, 15;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: '';
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(3deg, transparent, transparent 1px, rgba(120, 53, 15, 0.018) 1px, rgba(120, 53, 15, 0.018) 2px),
+    radial-gradient(circle at 80% 20%, rgba(180, 120, 75, 0.08), transparent 32%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 3px;
+}
+
+@layer components {
+  .button-primary {
+    @apply inline-flex min-h-12 items-center justify-center bg-theme-accent px-7 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-85;
+  }
+
+  .button-secondary {
+    @apply inline-flex min-h-12 items-center justify-center border border-theme-accent px-7 py-3 text-sm font-semibold text-theme-accent transition-colors hover:bg-theme-accent hover:text-white;
+  }
+
+  .section-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.3em] text-theme-secondary;
+  }
+
+  .section-title {
+    @apply mt-4 text-4xl font-semibold tracking-[-0.035em] text-theme-primary md:text-5xl;
+  }
+
+  .section-description {
+    @apply mt-6 leading-7 text-theme-secondary;
+  }
+
+  .surface-card {
+    @apply border border-theme-accent-20 bg-white/35;
+  }
+}
+
+@layer utilities {
+  .text-theme-primary {
+    color: rgb(var(--text-primary));
+  }
+
+  .text-theme-secondary {
+    color: rgb(var(--text-secondary));
+  }
+
+  .text-theme-accent {
+    color: rgb(var(--accent));
+  }
+
+  .bg-theme-accent {
+    background-color: rgb(var(--accent));
+  }
+
+  .bg-theme-accent-5 {
+    background-color: rgba(var(--accent), 0.05);
+  }
+
+  .border-theme-accent {
+    border-color: rgb(var(--accent));
+  }
+
+  .border-theme-accent-20 {
+    border-color: rgba(var(--accent), 0.2);
+  }
+
+  .border-theme-accent-30 {
+    border-color: rgba(var(--accent), 0.3);
+  }
+}
