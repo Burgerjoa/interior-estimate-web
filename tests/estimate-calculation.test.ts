@@ -75,3 +75,20 @@ test('음수 비용과 빈 자재 목록을 거부한다', () => {
 
   assert.equal(result.success, false)
 })
+
+
+test('음수 비용과 0평을 안전하게 계산한다', () => {
+  const result = calculateEstimate({
+    items: [item],
+    laborCost: -100_000,
+    etcCost: -50_000,
+    marginRate: 0,
+    pyeong: 0,
+  })
+
+  assert.equal(result.laborCost, 0)
+  assert.equal(result.etcCost, 0)
+  assert.equal(result.totalCost, 300000)
+  assert.equal(result.estimatePrice, 300000)
+  assert.equal(result.pricePerPyeong, 0)
+})
