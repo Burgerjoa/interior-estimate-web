@@ -1,6 +1,6 @@
-# ALVB Web
+# 인테리어 웹·견적 관리 도구
 
-상업공간 인테리어 회사에서 사용하기 위해 개발한 고객용 웹사이트와 내부 견적 관리 도구입니다.
+상업공간 인테리어 회사에서 사용하기 위해 개발한 고객용 웹사이트와 내부 견적 관리 도구입니다. 당시 회사 브랜드명은 ALVB로, 서비스 화면에는 원래 이름이 남아 있습니다.
 
 [배포 화면](https://alvb-web.vercel.app) · [견적 시스템 데모](https://alvb-web.vercel.app/estimate-demo) · [API 문서](https://alvb-web.vercel.app/api-docs)
 
